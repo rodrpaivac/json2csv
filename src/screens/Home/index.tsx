@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "../../components/Input";
 import Output from "../../components/Output";
+import { jsonToCsv } from "../../utils/JsonToCsv";
 
 import { Container } from "./styles";
 
@@ -15,17 +16,12 @@ const Home: React.FC = () => {
   const onConvert = () => {
     // e.preventDefault();
     if (json !== "") {
-      try {
-        const parsedJson = JSON.parse(json);
-
-        const header = Object.keys(parsedJson.items[0]).join(",");
-        const body = parsedJson.items
-          .map((j: any) => Object.values(j).join(","))
-          .join("n");
-
-        setCsv(`${header}\n${body}`);
-      } catch (error) {
-        console.log("error", error);
+      const response = jsonToCsv(json);
+      console.log("response", response);
+      if (response) {
+        setCsv(response);
+      } else {
+        setCsv("");
         alert("JSON inválido. Por favor, entre com um JSON válido.");
       }
     } else {

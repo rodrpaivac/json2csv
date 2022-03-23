@@ -20,7 +20,7 @@ export const TextInput = styled.textarea`
 
   font-family: Poppins-Regular;
   font-size: 12px;
-  border: 1px solid #222;
+  border: 1px solid gray;
 `;
 
 export const Header = styled.div`
