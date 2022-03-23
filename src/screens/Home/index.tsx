@@ -11,9 +11,6 @@ const Home: React.FC = () => {
 
   const [obj, setObj] = useState<string[]>([]);
 
-  const [header, setHeader] = useState<string>("");
-  const [body, setBody] = useState<string>("");
-
   const onChange = (text: string) => {
     setJson(text);
   };
@@ -22,8 +19,6 @@ const Home: React.FC = () => {
     if (json !== "") {
       const response = jsonToCsv(json, setObj);
       if (response) {
-        setHeader(response.header);
-        setBody(response.body);
         setCsv(`${response.header}\n${response.body}`);
       } else {
         setCsv("");
@@ -50,7 +45,7 @@ const Home: React.FC = () => {
         onConvert={onConvert}
         onClean={onClean}
       />
-      {csv && <Output csv={csv} header={header} body={body} obj={obj} />}
+      {csv && <Output csv={csv} obj={obj} />}
     </Container>
   );
 };

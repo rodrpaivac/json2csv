@@ -12,7 +12,7 @@ import {
   Td,
 } from "./styles";
 
-const Output: React.FC<Props> = ({ csv, header, body, obj }) => {
+const Output: React.FC<Props> = ({ csv, obj }) => {
   return (
     <Container>
       <Header>
@@ -35,26 +35,24 @@ const Table: React.FC<TableProps> = ({ obj }) => {
     setBody(tempBody);
   }, [obj]);
   return (
-    <>
-      <TableContainer>
-        <thead>
-          {header.map((element, index) => (
-            <Th>{element}</Th>
-          ))}
-        </thead>
-        <tbody>
-          {body.map((element) => {
-            return (
-              <Tr>
-                {element.map((item) => (
-                  <Td>{item}</Td>
-                ))}
-              </Tr>
-            );
-          })}
-        </tbody>
-      </TableContainer>
-    </>
+    <TableContainer>
+      <thead>
+        {header.map((element) => (
+          <Th>{element}</Th>
+        ))}
+      </thead>
+      <tbody>
+        {body.map((element) => {
+          return (
+            <Tr>
+              {element.map((item) => (
+                <Td>{item}</Td>
+              ))}
+            </Tr>
+          );
+        })}
+      </tbody>
+    </TableContainer>
   );
 };
 export default Output;
