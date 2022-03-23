@@ -7,17 +7,15 @@ export const jsonToCsv: JsonToCsv = (json, setObj = () => {}) => {
       setObj(parsedJson);
       const obj = { count: 2, items: parsedJson };
 
-      console.log("parsedJson", parsedJson);
       const header = Object.keys(obj.items[0]).join(",");
-      console.log("header", header);
 
       const body = obj.items
-        .map((j: any) => Object.values(j).join(","))
+        .map((element: any) => Object.values(element).join(","))
         .join("n");
-      console.log("body", body);
 
       return { header, body };
     } catch (e) {
+      console.log("error", e);
       return;
     }
   } else {

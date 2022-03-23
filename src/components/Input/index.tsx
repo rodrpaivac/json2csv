@@ -4,20 +4,20 @@ import { ButtonContainer, Container, Header, TextInput, Title } from "./styles";
 import { Props } from "./types";
 
 const Input: React.FC<Props> = ({ onChange, value, onConvert, onClean }) => {
-  const example = [
+  const example = `[
     {
-      id: 1,
-      name: "Roberta",
-      age: 28,
-      occupation: "Software Developer",
+      "id": 1,
+      "name": "Roberta",
+      "age": 28,
+      "occupation": "Software Developer"
     },
     {
-      id: 2,
-      name: "Luis",
-      age: 20,
-      occupation: "College Student",
-    },
-  ];
+      "id": 2,
+      "name": "Luis",
+      "age": 20,
+      "occupation": "College Student"
+    }
+  ]`;
 
   return (
     <Container>
@@ -25,7 +25,7 @@ const Input: React.FC<Props> = ({ onChange, value, onConvert, onClean }) => {
         <Title>Entre com o JSON abaixo:</Title>
       </Header>
       <TextInput
-        placeholder={`Exemplo:\n${JSON.stringify(example)}`}
+        placeholder={`Exemplo:\n${example}`}
         value={value}
         onChange={(e) => {
           onChange(e.target.value);
