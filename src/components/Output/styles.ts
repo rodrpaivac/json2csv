@@ -11,10 +11,11 @@ export const Container = styled.div`
 export const TextOutput = styled.textarea`
   background: #f2f2f2;
   width: 80vw;
-  height: 20vh;
+  min-height: 20vh;
   border-radius: 10px;
   color: #111;
   padding: 10px;
+  resize: none;
 `;
 
 export const Title = styled.p`

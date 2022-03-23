@@ -14,30 +14,38 @@ const Home: React.FC = () => {
 
   const onConvert = () => {
     // e.preventDefault();
-    const parsedJson = JSON.parse(json);
-    console.log("parsedJson", parsedJson);
-    // if (
-    //   !Array.isArray(parsedJson) ||
-    //   !parsedJson.every((p) => typeof p === "object" && p !== null)
-    // ) {
-    //   console.log("return");
-    //   return;
-    // }
+    if (json !== "") {
+      try {
+        const parsedJson = JSON.parse(json);
 
-    const heading = Object.keys(parsedJson.items[0]).join(",");
-    const body = parsedJson.items
-      .map((j: any) => Object.values(j).join(","))
-      .join("n");
+        const header = Object.keys(parsedJson.items[0]).join(",");
+        const body = parsedJson.items
+          .map((j: any) => Object.values(j).join(","))
+          .join("n");
 
-    console.log("header", heading);
-    console.log("body", body);
+        setCsv(`${header}\n${body}`);
+      } catch (error) {
+        console.log("error", error);
+        alert("JSON inválido. Por favor, entre com um JSON válido.");
+      }
+    } else {
+      alert("Campo vazio. Por favor, entre com um JSON antes de prosseguir.");
+    }
+  };
 
-    setCsv(`${heading}\n${body}`);
+  const onClean = () => {
+    setJson("");
+    setCsv("");
   };
 
   return (
     <Container>
-      <Input onChange={onChange} value={json} onConvert={onConvert} />
+      <Input
+        onChange={onChange}
+        value={json}
+        onConvert={onConvert}
+        onClean={onClean}
+      />
       {csv && <Output csv={csv} />}
     </Container>
   );

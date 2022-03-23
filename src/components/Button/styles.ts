@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import { ContainerProps } from "./types";
 
-export const Container = styled.button`
+export const Container = styled.button<ContainerProps>`
   padding: 0px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   border-radius: 20px;
-  background: #629bc4;
+  background: ${({ background }) => background};
   margin: 20px;
 `;
 

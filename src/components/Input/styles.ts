@@ -15,6 +15,8 @@ export const TextInput = styled.textarea`
   border-radius: 10px;
   color: #111;
   padding: 10px;
+  resize: none;
+  overflow: auto;
 `;
 
 export const Title = styled.p`
