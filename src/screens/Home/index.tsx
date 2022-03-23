@@ -3,7 +3,7 @@ import Input from "../../components/Input";
 import Output from "../../components/Output";
 import { jsonToCsv } from "../../utils/JsonToCsv";
 
-import { Container } from "./styles";
+import { Container, Header, Title } from "./styles";
 
 const Home: React.FC = () => {
   const [json, setJson] = useState<string>("");
@@ -35,6 +35,9 @@ const Home: React.FC = () => {
 
   return (
     <Container>
+      <Header>
+        <Title>Conversor de JSON para CSV</Title>{" "}
+      </Header>
       <Input
         onChange={onChange}
         value={json}

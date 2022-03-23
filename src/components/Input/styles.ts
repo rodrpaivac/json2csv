@@ -10,8 +10,8 @@ export const Container = styled.div`
 
 export const TextInput = styled.textarea`
   background: #f2f2f2;
-  width: 90vw;
-  height: 20vh;
+  width: 80vw;
+  height: 40vh;
   border-radius: 10px;
   color: #111;
   resize: none;
@@ -20,7 +20,7 @@ export const TextInput = styled.textarea`
 
   font-family: Poppins-Regular;
   font-size: 12px;
-  border: 1px solid gray;
+  border: 3px dashed #444;
 `;
 
 export const Header = styled.div`
@@ -29,8 +29,8 @@ export const Header = styled.div`
 
 export const Title = styled.p`
   color: #111;
-  padding-left: 3vw;
-  font-family: Poppins-Light;
+  padding-left: 6vw;
+  font-family: Poppins-Regular;
   font-size: 18px;
 `;
 
@@ -38,6 +38,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 70vw;
-  padding: 5vw 0px;
+  width: 75vw;
+  margin-top: 25px;
 `;
