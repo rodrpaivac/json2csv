@@ -10,14 +10,27 @@ export const Container = styled.div`
 
 export const TextOutput = styled.textarea`
   background: #f2f2f2;
-  width: 80vw;
-  min-height: 20vh;
+  width: 90vw;
+  height: 20vh;
   border-radius: 10px;
   color: #111;
-  padding: 10px;
   resize: none;
+  padding: 10px;
+  overflow: auto;
+
+  font-family: Poppins-Regular;
+  font-size: 12px;
+  border: 1px solid #222;
+`;
+
+export const Header = styled.div`
+  width: 100vw;
 `;
 
 export const Title = styled.p`
-  color: #f2f2f2;
+  color: #111;
+  padding-left: 3vw;
+
+  font-family: Poppins-Light;
+  font-size: 18px;
 `;

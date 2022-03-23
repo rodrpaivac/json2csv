@@ -1,12 +1,14 @@
 import React from "react";
 import Button from "../Button";
-import { Container, TextInput, Title } from "./styles";
+import { ButtonContainer, Container, Header, TextInput, Title } from "./styles";
 import { Props } from "./types";
 
 const Input: React.FC<Props> = ({ onChange, value, onConvert, onClean }) => {
   return (
     <Container>
-      <Title>Entre com o JSON abaixo:</Title>
+      <Header>
+        <Title>Entre com o JSON abaixo:</Title>
+      </Header>
       <TextInput
         placeholder="Digite aqui o JSON"
         value={value}
@@ -14,12 +16,14 @@ const Input: React.FC<Props> = ({ onChange, value, onConvert, onClean }) => {
           onChange(e.target.value);
         }}
       />
-      <Button
-        label="Converter"
-        background="#629bc4"
-        onClick={() => onConvert()}
-      />
-      <Button label="Limpar" background="#c4626f" onClick={() => onClean()} />
+      <ButtonContainer>
+        <Button label="LIMPAR" background="#CE6352" onClick={() => onClean()} />
+        <Button
+          label="CONVERTER"
+          background="#81C7BB"
+          onClick={() => onConvert()}
+        />
+      </ButtonContainer>
     </Container>
   );
 };

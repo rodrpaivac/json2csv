@@ -2,17 +2,18 @@ import styled from "styled-components";
 import { ContainerProps } from "./types";
 
 export const Container = styled.button<ContainerProps>`
-  padding: 0px 40px;
+  padding: 5px 16vw;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  border-radius: 20px;
+  border: 0px solid #222;
+  box-shadow: 2px 1px 5px #bababa;
+  border-radius: 30px;
   background: ${({ background }) => background};
-  margin: 20px;
 `;
 
 export const Label = styled.p`
-  color: #111;
-  font-weight: bold;
+  color: #ffffff;
+  font-family: Poppins-Bold;
+  font-size: 12px;
 `;
