@@ -14,7 +14,6 @@ const Home: React.FC = () => {
   };
 
   const onConvert = () => {
-    // e.preventDefault();
     if (json !== "") {
       const response = jsonToCsv(json);
       console.log("response", response);
