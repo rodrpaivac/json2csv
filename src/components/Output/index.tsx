@@ -29,13 +29,11 @@ const Table: React.FC<TableProps> = ({ obj }) => {
   const [header, setHeader] = useState<string[]>([]);
   const [body, setBody] = useState<string[][]>([]);
   useEffect(() => {
-    console.log("OBJ", obj);
     const tempHeader = Object.keys(obj[0]);
     setHeader(tempHeader);
     const tempBody: string[][] = obj.map((j: any) => Object.values(j));
     setBody(tempBody);
-    console.log("tempBody", tempBody); // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [obj]);
   return (
     <>
       <TableContainer>

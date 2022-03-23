@@ -35,19 +35,22 @@ export const Title = styled.p`
 `;
 
 export const TableContainer = styled.table`
-  border: 1px solid #111;
+  width: 85vw;
+  margin-bottom: 50px;
 `;
 
 export const Th = styled.th`
-  border: 1px solid #555;
+  background: #82c6bb;
+  border-radius: 5px;
+  padding: 5px;
 `;
 
-export const Tr = styled.tr`
-  border: 1px solid #555;
-`;
+export const Tr = styled.tr``;
 
 export const Td = styled.td`
-  border: 1px solid #555;
+  border: 2px solid #82c6bb;
+  border-radius: 5px;
+  padding: 5px;
 `;
 
 export const TableTitle = styled.p`

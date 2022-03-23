@@ -40,4 +40,9 @@ export const ButtonContainer = styled.div`
   justify-content: space-between;
   width: 75vw;
   margin-top: 25px;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    width: 85vw;
+  }
 `;

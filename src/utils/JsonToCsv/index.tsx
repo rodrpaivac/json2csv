@@ -1,9 +1,10 @@
 import { JsonToCsv } from "./types";
 
-export const jsonToCsv: JsonToCsv = (json) => {
+export const jsonToCsv: JsonToCsv = (json, setObj = () => {}) => {
   if (json !== "") {
     try {
       const parsedJson = JSON.parse(json);
+      setObj(parsedJson);
       const obj = { count: 2, items: parsedJson };
 
       console.log("parsedJson", parsedJson);

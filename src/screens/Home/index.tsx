@@ -19,15 +19,11 @@ const Home: React.FC = () => {
   };
 
   const onConvert = () => {
-    const parsedJson: string[] = JSON.parse(json);
-    setObj(parsedJson);
-
     if (json !== "") {
-      const response = jsonToCsv(json);
+      const response = jsonToCsv(json, setObj);
       if (response) {
         setHeader(response.header);
         setBody(response.body);
-
         setCsv(`${response.header}\n${response.body}`);
       } else {
         setCsv("");
