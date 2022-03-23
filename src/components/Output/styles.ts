@@ -20,6 +20,7 @@ export const TextOutput = styled.textarea`
   font-family: Poppins-Regular;
   font-size: 12px;
   border: 3px dashed #444;
+  margin-bottom: 50px;
 `;
 
 export const Header = styled.div`
@@ -31,4 +32,32 @@ export const Title = styled.p`
   padding-left: 6vw;
   font-family: Poppins-Regular;
   font-size: 18px;
+`;
+
+export const TableContainer = styled.table`
+  border: 1px solid #111;
+`;
+
+export const Th = styled.th`
+  border: 1px solid #555;
+`;
+
+export const Tr = styled.tr`
+  border: 1px solid #555;
+`;
+
+export const Td = styled.td`
+  border: 1px solid #555;
+`;
+
+export const TableTitle = styled.p`
+  color: #111;
+  font-family: Poppins-SemiBold;
+  font-size: 14px;
+`;
+
+export const TableValue = styled.p`
+  color: #111;
+  font-family: Poppins-Regular;
+  font-size: 14px;
 `;

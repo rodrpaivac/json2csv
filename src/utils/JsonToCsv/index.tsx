@@ -15,7 +15,7 @@ export const jsonToCsv: JsonToCsv = (json) => {
         .join("n");
       console.log("body", body);
 
-      return `${header}\n${body}`;
+      return { header, body };
     } catch (e) {
       return;
     }

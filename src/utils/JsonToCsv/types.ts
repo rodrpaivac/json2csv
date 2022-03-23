@@ -1,1 +1,6 @@
-export type JsonToCsv = (json: string) => string | undefined;
+export type JsonToCsv = (json: string) =>
+  | {
+      header: string;
+      body: string;
+    }
+  | undefined;

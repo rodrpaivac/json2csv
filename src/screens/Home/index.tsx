@@ -9,16 +9,26 @@ const Home: React.FC = () => {
   const [json, setJson] = useState<string>("");
   const [csv, setCsv] = useState<string>("");
 
+  const [obj, setObj] = useState<string[]>([]);
+
+  const [header, setHeader] = useState<string>("");
+  const [body, setBody] = useState<string>("");
+
   const onChange = (text: string) => {
     setJson(text);
   };
 
   const onConvert = () => {
+    const parsedJson: string[] = JSON.parse(json);
+    setObj(parsedJson);
+
     if (json !== "") {
       const response = jsonToCsv(json);
-      console.log("response", response);
       if (response) {
-        setCsv(response);
+        setHeader(response.header);
+        setBody(response.body);
+
+        setCsv(`${response.header}\n${response.body}`);
       } else {
         setCsv("");
         alert("JSON inválido. Por favor, entre com um JSON válido.");
@@ -36,7 +46,7 @@ const Home: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Title>Conversor de JSON para CSV</Title>{" "}
+        <Title>Conversor de JSON para CSV</Title>
       </Header>
       <Input
         onChange={onChange}
@@ -44,7 +54,7 @@ const Home: React.FC = () => {
         onConvert={onConvert}
         onClean={onClean}
       />
-      {csv && <Output csv={csv} />}
+      {csv && <Output csv={csv} header={header} body={body} obj={obj} />}
     </Container>
   );
 };
