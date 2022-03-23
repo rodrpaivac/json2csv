@@ -38,6 +38,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 90vw;
+  width: 70vw;
   padding: 5vw 0px;
 `;
