@@ -6,7 +6,7 @@ import { Props } from "./types";
 const Button: React.FC<Props> = ({ onClick }) => {
   return (
     <Container onClick={onClick}>
-      <Label>Converter para CSV</Label>
+      <Label>Converter</Label>
     </Container>
   );
 };

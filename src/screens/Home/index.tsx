@@ -13,7 +13,26 @@ const Home: React.FC = () => {
   };
 
   const onConvert = () => {
-    setCsv(json);
+    // e.preventDefault();
+    const parsedJson = JSON.parse(json);
+    console.log("parsedJson", parsedJson);
+    // if (
+    //   !Array.isArray(parsedJson) ||
+    //   !parsedJson.every((p) => typeof p === "object" && p !== null)
+    // ) {
+    //   console.log("return");
+    //   return;
+    // }
+
+    const heading = Object.keys(parsedJson.items[0]).join(",");
+    const body = parsedJson.items
+      .map((j: any) => Object.values(j).join(","))
+      .join("n");
+
+    console.log("header", heading);
+    console.log("body", body);
+
+    setCsv(`${heading}\n${body}`);
   };
 
   return (
